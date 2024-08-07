@@ -35,7 +35,7 @@ const selectFilterOptions = ref<{ [key: string]: string }[]>([
   { title: '排除：繁中字幕', value: ' !CHT ' },
   { title: '语言：简中字幕', value: ' CHS ' },
   { title: '排除：简中字幕', value: ' !CHS ' },
-  { title: '动漫：动漫原盘', value: ' Anime-RAW ' },
+  { title: '动漫原盘', value: ' Anime-RAW ' },
   { title: '排除：动漫原盘', value: ' !Anime-RAW ' },
   { title: '特效字幕', value: ' SPECSUB ' },
   { title: '中文字幕', value: ' CNSUB ' },
