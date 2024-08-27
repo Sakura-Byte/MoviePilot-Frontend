@@ -555,10 +555,10 @@ onMounted(() => {
         <VIcon color="primary" v-if="selectMode"> mdi-selection-remove </VIcon>
         <VIcon color="primary" v-else>mdi-select</VIcon>
       </IconBtn>
-      <IconBtn v-if="!isFile" @click="selectAll">
+      <IconBtn v-if="!isFile && selectMode" @click="selectAll">
         <VIcon color="primary"> mdi-select-all </VIcon>
       </IconBtn>
-      <IconBtn v-if="!isFile" @click="reverseSelect">
+      <IconBtn v-if="!isFile && selectMode" @click="reverseSelect">
         <VIcon color="primary"> mdi-select-inverse </VIcon>
       </IconBtn>
       <IconBtn v-if="isFile" @click="recognize(inProps.item.path || '')">
