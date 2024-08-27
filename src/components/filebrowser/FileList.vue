@@ -555,6 +555,12 @@ onMounted(() => {
         <VIcon color="primary" v-if="selectMode"> mdi-selection-remove </VIcon>
         <VIcon color="primary" v-else>mdi-select</VIcon>
       </IconBtn>
+      <IconBtn v-if="!isFile" @click="selectAll">
+        <VIcon color="primary"> mdi-select-all </VIcon>
+      </IconBtn>
+      <IconBtn v-if="!isFile" @click="reverseSelect">
+        <VIcon color="primary"> mdi-select-inverse </VIcon>
+      </IconBtn>
       <IconBtn v-if="isFile" @click="recognize(inProps.item.path || '')">
         <VIcon color="primary"> mdi-text-recognition </VIcon>
       </IconBtn>
@@ -563,12 +569,6 @@ onMounted(() => {
       </IconBtn>
       <IconBtn v-if="!isFile" @click="list_files">
         <VIcon color="primary"> mdi-refresh </VIcon>
-      </IconBtn>
-      <IconBtn v-if="!isFile" @click="selectAll">
-        <VIcon color="primary"> mdi-select-all </VIcon>
-      </IconBtn>
-      <IconBtn v-if="!isFile" @click="reverseSelect">
-        <VIcon color="primary"> mdi-select-inverse </VIcon>
       </IconBtn>
       <!-- 批量操作按钮 -->
       <span v-if="selected.length > 0">
