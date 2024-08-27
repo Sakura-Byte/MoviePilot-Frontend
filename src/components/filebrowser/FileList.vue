@@ -127,6 +127,20 @@ const isImage = computed(() => {
   return ['png', 'jpg', 'jpeg', 'gif', 'bmp'].includes(ext ?? '')
 })
 
+// 全选
+function selectAll() {
+  if (selected.value.length === items.value.length) {
+    selected.value = []
+  } else {
+    selected.value = items.value
+  }
+}
+
+// 反选
+function reverseSelect() {
+  selected.value = items.value.filter(item => !selected.value.includes(item))
+}
+
 // 调整选择模式
 function changeSelectMode() {
   selectMode.value = !selectMode.value
@@ -549,6 +563,12 @@ onMounted(() => {
       </IconBtn>
       <IconBtn v-if="!isFile" @click="list_files">
         <VIcon color="primary"> mdi-refresh </VIcon>
+      </IconBtn>
+      <IconBtn v-if="!isFile" @click="selectAll">
+        <VIcon color="primary"> mdi-select-all </VIcon>
+      </IconBtn>
+      <IconBtn v-if="!isFile" @click="reverseSelect">
+        <VIcon color="primary"> mdi-select-inverse </VIcon>
       </IconBtn>
       <!-- 批量操作按钮 -->
       <span v-if="selected.length > 0">
